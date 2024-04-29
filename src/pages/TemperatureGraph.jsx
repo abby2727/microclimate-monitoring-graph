@@ -26,7 +26,9 @@ const TemperatureGraph = () => {
 		useQuery(
 			'temperature-data',
 			() => {
-				return axios.get('http://localhost:3005/api/temperature');
+				return axios.get(
+					'https://microclimate-monitoring-backend.vercel.app/api/temperature'
+				);
 			},
 			{ staleTime: 10 * 60 * 1000 } // refetch ONLY after 10 minutes
 		);

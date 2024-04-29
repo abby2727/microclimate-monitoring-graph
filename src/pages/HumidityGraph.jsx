@@ -23,7 +23,9 @@ const HumidityGraph = () => {
 	const { isLoading: isLoadingHumidity, data: humidityValue } = useQuery(
 		'humidity-data',
 		() => {
-			return axios.get('http://localhost:3005/api/humidity');
+			return axios.get(
+				'https://microclimate-monitoring-backend.vercel.app/api/humidity'
+			);
 		},
 		{ staleTime: 10 * 60 * 1000 } // refetch ONLY after 10 minutes
 	);

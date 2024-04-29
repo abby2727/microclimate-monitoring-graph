@@ -25,7 +25,9 @@ const LightIntensityGraph = () => {
 		useQuery(
 			'light-intensity-data',
 			() => {
-				return axios.get('http://localhost:3005/api/light-intensity');
+				return axios.get(
+					'https://microclimate-monitoring-backend.vercel.app/api/light-intensity'
+				);
 			},
 			{ staleTime: 10 * 60 * 1000 } // refetch ONLY after 10 minutes
 		);

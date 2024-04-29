@@ -26,7 +26,9 @@ const SoilMoistureGraph = () => {
 		useQuery(
 			'soil-moisture-data',
 			() => {
-				return axios.get('http://localhost:3005/api/soil-moisture');
+				return axios.get(
+					'https://microclimate-monitoring-backend.vercel.app/api/soil-moisture'
+				);
 			},
 			{ staleTime: 10 * 60 * 1000 } // refetch ONLY after 10 minutes
 		);
