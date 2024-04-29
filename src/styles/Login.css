@@ -1,0 +1,64 @@
+/* Login Header Style */
+.login-header-box {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	padding-left: 6rem;
+}
+
+/* Login Footer Style */
+.toolbar {
+	padding: 2rem 2rem;
+}
+
+.outer-box {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	width: 100%;
+}
+
+.outer-box-sm {
+	flex-direction: row;
+}
+
+.inner-box {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+
+.logo-text {
+	margin-left: 8px;
+	color: #000;
+	font-weight: bold;
+	margin: 50px;
+}
+
+.footer-text {
+	margin-left: 8px;
+	color: #fff;
+}
+
+.br-show {
+	display: none;
+}
+
+/* Mobile devices */
+@media (max-width: 600px) {
+	/* Login Header */
+	.login-header-box-sm {
+		justify-content: center;
+		padding-left: 0rem;
+	}
+
+	/* Login Footer */
+	.outer-box-sm {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.br-show {
+		display: block;
+	}
+}

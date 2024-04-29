@@ -1,0 +1,228 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}
+
+.container {
+	height: calc(100vh - 4.5rem);
+	background-image: linear-gradient(#ffffff, #e1e1e1);
+}
+
+/* Navbar Styling */
+nav {
+	background-color: #307a51;
+	color: white;
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	gap: 2rem;
+	padding: 12px 2rem;
+	height: 4.5rem;
+}
+
+nav ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	display: flex;
+	gap: 1rem;
+}
+
+nav ul > button {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+nav a {
+	color: inherit;
+	text-decoration: none;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	padding: 0.25rem;
+	margin-left: 0.625rem;
+}
+
+.left-nav {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.logo {
+	width: 4.5rem;
+}
+
+nav a.active {
+	background-color: #f3f4f6;
+	border-radius: 0.25rem;
+	color: black;
+}
+
+/* End Navbar Styling */
+
+.icon {
+	align-self: center;
+	color: white;
+}
+
+/* Chart Styling */
+.chartCard {
+	width: 100vw;
+	padding-top: 3.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.chartBox {
+	width: 58em;
+	padding: 20px;
+	border-radius: 10px;
+	border: solid 3px #307a51;
+	background: white;
+	display: flex;
+}
+
+.colSmall {
+	width: 40px;
+}
+
+.colLarge {
+	max-width: 58em;
+	overflow-x: scroll;
+}
+
+.box {
+	width: calc(58em - 40px);
+	height: 600px;
+}
+
+/* Date Picker Styling */
+.date-picker {
+	padding-top: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.dash {
+	display: inline-block;
+	margin: 0px 10px;
+	border-bottom: 1px solid black;
+	width: 10px;
+	position: relative;
+}
+
+.date-picker .button {
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+	margin-left: 10px;
+}
+
+.datepicker-error {
+	border: 1px solid red !important;
+	border-radius: 5px;
+}
+
+.nav-menu-button {
+	display: none;
+}
+
+/* CSS breakpoint for a minimum height of 700px and a maximum height of 850px */
+@media (min-height: 700px) and (max-height: 850px) {
+	.chartCard {
+		padding-top: 2px;
+	}
+
+	.chartBox {
+		width: 58em;
+		padding: 10px;
+	}
+
+	.colLarge,
+	.box {
+		width: 58em;
+	}
+
+	.box {
+		width: calc(58em - 40px);
+	}
+
+	.date-picker {
+		padding-top: 2px;
+	}
+}
+
+/* Large devices (desktops, laptops) */
+@media (min-width: 992px) {
+	.chartBox,
+	.colLarge,
+	.box {
+		width: 58em;
+	}
+
+	.box {
+		width: calc(58em - 40px);
+	}
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 768px) and (max-width: 991px) {
+	.chartBox,
+	.colLarge {
+		width: 48em;
+	}
+
+	.box {
+		width: calc(48em - 40px);
+	}
+}
+
+/* Small devices (phones) */
+@media (min-width: 426px) and (max-width: 767px) {
+	.chartBox,
+	.colLarge {
+		width: 38em;
+	}
+
+	.box {
+		width: calc(38em - 40px);
+	}
+}
+
+/* Small devices (phones) */
+@media (max-width: 425px) {
+	nav {
+		padding: 10px;
+	}
+
+	.nav-link {
+		display: none;
+	}
+
+	.divider {
+		display: none;
+	}
+
+	.nav-menu-button {
+		display: block;
+	}
+
+	.chartBox,
+	.colLarge {
+		width: 20em;
+	}
+
+	.box {
+		width: calc(20em - 40px);
+	}
+
+	.container {
+		height: 100%;
+	}
+}
