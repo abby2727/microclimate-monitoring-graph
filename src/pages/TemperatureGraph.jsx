@@ -182,10 +182,10 @@ const TemperatureGraph = () => {
 					labels: temperatureData.formattedDates,
 					datasets: [
 						{
-							label: 'Temperature (%)',
+							label: 'Temperature Levels (°C)',
 							data: temperatureData.values,
-							backgroundColor: 'rgba(255,99,132,0.4)',
-							borderColor: 'rgba(255,99,132,0.9)',
+							backgroundColor: 'rgba(255,215,0,0.4)',
+							borderColor: 'rgba(255,215,0,0.9)',
 							borderWidth: 1,
 							fill: true
 						}

@@ -5,7 +5,7 @@ import logo from '../assets/logo/SNSU_Logo-Bg.png';
 
 const LoginHeader = () => {
 	return (
-		<AppBar position='static' sx={{ backgroundColor: '#1976d2' }}>
+		<AppBar position='static' sx={{ backgroundColor: '#9370db' }}>
 			<Toolbar>
 				<Box className='login-header-box login-header-box-sm'>
 					<img

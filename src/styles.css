@@ -4,6 +4,7 @@
 
 body {
 	margin: 0;
+	font-family: 'Inter', sans-serif;
 }
 
 .container {
@@ -13,7 +14,7 @@ body {
 
 /* Navbar Styling */
 nav {
-	background-color: #307a51;
+	background-color: #9370db;
 	color: white;
 	display: flex;
 	justify-content: space-between;
@@ -44,7 +45,7 @@ nav a {
 	display: flex;
 	align-items: center;
 	padding: 0.25rem;
-	margin-left: 0.625rem;
+	margin-left: 0.2rem;
 }
 
 .left-nav {
@@ -83,7 +84,7 @@ nav a.active {
 	width: 58em;
 	padding: 20px;
 	border-radius: 10px;
-	border: solid 3px #307a51;
+	border: solid 3px #9370db;
 	background: white;
 	display: flex;
 }

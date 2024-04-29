@@ -181,10 +181,10 @@ const LightIntensityGraph = () => {
 					labels: lightIntensityData.formattedDates,
 					datasets: [
 						{
-							label: 'LightIntensity (%)',
+							label: 'Light Intensity',
 							data: lightIntensityData.values,
-							backgroundColor: 'rgba(255,99,132,0.4)',
-							borderColor: 'rgba(255,99,132,0.9)',
+							backgroundColor: 'rgba(50,205,50,0.4)',
+							borderColor: 'rgba(50,205,50,0.9)',
 							borderWidth: 1,
 							fill: true
 						}

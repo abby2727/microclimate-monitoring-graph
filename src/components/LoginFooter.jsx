@@ -5,7 +5,7 @@ import logo from '../assets/logo/SNSU_Logo-Bg.png';
 
 const LoginFooter = () => {
 	return (
-		<AppBar position='static' sx={{ backgroundColor: '#1976d2' }}>
+		<AppBar position='static' sx={{ backgroundColor: '#9370db' }}>
 			<Toolbar className='toolbar'>
 				<Box className='outer-box outer-box-sm'>
 					<Box className='inner-box inner-box-sm'>
@@ -29,7 +29,7 @@ const LoginFooter = () => {
 					<Typography variant='body1' className='footer-text'>
 						<span>Provided by:</span>
 						<br />
-						<span>EGardose | TMenor</span>
+						<span>Researcher 1 | Research 2</span>
 					</Typography>
 				</Box>
 			</Toolbar>

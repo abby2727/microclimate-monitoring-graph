@@ -179,10 +179,10 @@ const HumidityGraph = () => {
 					labels: humidityData.formattedDates,
 					datasets: [
 						{
-							label: 'Humidity (%)',
+							label: 'Humidity Levels (%)',
 							data: humidityData.values,
-							backgroundColor: 'rgba(255,99,132,0.4)',
-							borderColor: 'rgba(255,99,132,0.9)',
+							backgroundColor: 'rgba(74,144,226,0.4)',
+							borderColor: 'rgba(74,144,226,0.9)',
 							borderWidth: 1,
 							fill: true
 						}

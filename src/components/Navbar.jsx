@@ -8,25 +8,25 @@ const Navbar = () => {
 		<nav>
 			<div className='left-nav'>
 				<div className='logo'>
-					<img src={logo} alt='Logo' width={55} height={55} />
+					<img src={logo} alt='Logo' width={58} height={58} />
 				</div>
 				<NavLink className='nav-link' to='/humidity'>
-					<span style={{ fontWeight: 500, fontSize: 20 }}>
+					<span style={{ fontWeight: 400, fontSize: 18 }}>
 						Humidity
 					</span>
 				</NavLink>
 				<NavLink className='nav-link' to='/soil-moisture'>
-					<span style={{ fontWeight: 500, fontSize: 20 }}>
+					<span style={{ fontWeight: 400, fontSize: 18 }}>
 						Soil Moisture
 					</span>
 				</NavLink>
 				<NavLink className='nav-link' to='/temperature'>
-					<span style={{ fontWeight: 500, fontSize: 20 }}>
+					<span style={{ fontWeight: 400, fontSize: 18 }}>
 						Temperature
 					</span>
 				</NavLink>
 				<NavLink className='nav-link' to='/light-intensity'>
-					<span style={{ fontWeight: 500, fontSize: 20 }}>
+					<span style={{ fontWeight: 400, fontSize: 18 }}>
 						Light Intensity
 					</span>
 				</NavLink>
