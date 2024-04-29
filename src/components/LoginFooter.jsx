@@ -29,7 +29,7 @@ const LoginFooter = () => {
 					<Typography variant='body1' className='footer-text'>
 						<span>Provided by:</span>
 						<br />
-						<span>Researcher 1 | Research 2</span>
+						<span>James Degamon | Vincent Dihayco</span>
 					</Typography>
 				</Box>
 			</Toolbar>
