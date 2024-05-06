@@ -10,6 +10,11 @@ import SoilMoistureGraph from './pages/SoilMoistureGraph';
 import TemperatureGraph from './pages/TemperatureGraph';
 import LightIntensityGraph from './pages/LightIntensityGraph';
 
+import HumidityLiveGraph from './pages/HumidityLiveGraph';
+import SoilMoistureLiveGraph from './pages/SoilMoistureLiveGraph';
+import TemperatureLiveGraph from './pages/TemperatureLiveGraph';
+import LightIntensityLiveGraph from './pages/LightIntensityLiveGraph';
+
 const queryClient = new QueryClient();
 
 export const AuthContext = createContext();
@@ -59,6 +64,22 @@ const App = () => {
 		{
 			path: '/light-intensity',
 			element: isLoggedIn ? <LightIntensityGraph /> : <LoginPage />
+		},
+		{
+			path: '/humidity-live',
+			element: isLoggedIn ? <HumidityLiveGraph /> : <LoginPage />
+		},
+		{
+			path: '/soil-moisture-live',
+			element: isLoggedIn ? <SoilMoistureLiveGraph /> : <LoginPage />
+		},
+		{
+			path: '/temperature-live',
+			element: isLoggedIn ? <TemperatureLiveGraph /> : <LoginPage />
+		},
+		{
+			path: '/light-intensity-live',
+			element: isLoggedIn ? <LightIntensityLiveGraph /> : <LoginPage />
 		},
 		{ path: '/', element: <LoginPage /> }
 	]);

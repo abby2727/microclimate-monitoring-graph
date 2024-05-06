@@ -1,29 +1,18 @@
-import { useContext, useState, useEffect } from 'react';
+import { useContext, useState } from 'react';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import NotificationsIcon from '@mui/icons-material/Notifications';
 import MenuIcon from '@mui/icons-material/Menu';
-import {
-	Menu,
-	MenuItem,
-	Popover,
-	Paper,
-	Typography,
-	Divider,
-	Button
-} from '@mui/material';
+import { Menu, MenuItem } from '@mui/material';
 import { AuthContext } from '../App'; // import AuthContext
 import { useNavigate } from 'react-router-dom';
 
 const UserMenu = () => {
 	const [logoutAnchor, setLogoutAnchor] = useState(null);
 	const [navMenuAnchor, setNavMenuAnchor] = useState(null);
-	const [notificationAnchor, setNotificationAnchor] = useState(null);
-	const [permission, setPermission] = useState(Notification.permission);
+	const [navLiveMenuAnchor, setNavLiveMenuAnchor] = useState(null);
 
 	const logoutOpen = Boolean(logoutAnchor);
 	const navMenuOpen = Boolean(navMenuAnchor);
-	const notificationOpen = Boolean(notificationAnchor);
-	const id = open ? 'simple-popover' : undefined;
+	const navLiveMenuOpen = Boolean(navLiveMenuAnchor);
 
 	const { setIsLoggedIn } = useContext(AuthContext); // use AuthContext
 	const navigate = useNavigate();
@@ -31,13 +20,13 @@ const UserMenu = () => {
 	const handleClick = (event, name) => {
 		if (name === 'logout') setLogoutAnchor(event.currentTarget);
 		if (name === 'navMenu') setNavMenuAnchor(event.currentTarget);
-		if (name === 'notification') setNotificationAnchor(event.currentTarget);
+		if (name === 'navLiveMenu') setNavLiveMenuAnchor(event.currentTarget);
 	};
 
 	const handleClose = (name) => {
 		if (name === 'logout') setLogoutAnchor(null);
 		if (name === 'navMenu') setNavMenuAnchor(null);
-		if (name === 'notification') setNotificationAnchor(null);
+		if (name === 'navLiveMenu') setNavLiveMenuAnchor(null);
 	};
 
 	const handleLogout = () => {
@@ -45,10 +34,6 @@ const UserMenu = () => {
 		setIsLoggedIn(false); // Logout the user
 		navigate('/'); // Redirect to login page
 	};
-
-	useEffect(() => {
-		setPermission(Notification.permission);
-	}, []);
 
 	return (
 		<>
@@ -63,13 +48,18 @@ const UserMenu = () => {
 				<MenuIcon className='icon' />
 			</button>
 
-			{/* <button
-				aria-describedby={id}
-				variant='contained'
-				onClick={(event) => handleClick(event, 'notification')}
+			<button
+				id='navMenu-live-button'
+				aria-controls={
+					navLiveMenuOpen ? 'navMenu-live-menu' : undefined
+				}
+				aria-haspopup='true'
+				aria-expanded={navLiveMenuOpen ? 'true' : undefined}
+				onClick={(event) => handleClick(event, 'navLiveMenu')}
+				className='nav-live-menu-button'
 			>
-				<NotificationsIcon className='icon' />
-			</button> */}
+				<MenuIcon className='icon' />
+			</button>
 
 			<button
 				id='logout-button'
@@ -81,6 +71,7 @@ const UserMenu = () => {
 				<AccountCircleIcon className='icon' fontSize='large' />
 			</button>
 
+			{/* Logout Nav Menu */}
 			<Menu
 				id='logout-menu'
 				anchorEl={logoutAnchor}
@@ -93,7 +84,7 @@ const UserMenu = () => {
 				<MenuItem onClick={handleLogout}>Logout</MenuItem>
 			</Menu>
 
-			{/* Nav Menu */}
+			{/* Mobile Graph Menu */}
 			<Menu
 				id='navMenu-menu'
 				anchorEl={navMenuAnchor}
@@ -125,22 +116,37 @@ const UserMenu = () => {
 				</MenuItem>
 			</Menu>
 
-			<Popover
-				id={id}
-				open={notificationOpen}
-				anchorEl={notificationAnchor}
-				onClose={() => handleClose('notification')}
-				anchorOrigin={{
-					vertical: 'bottom',
-					horizontal: 'left'
+			{/* Live Graph Menu */}
+			<Menu
+				id='navMenu-live-menu'
+				anchorEl={navLiveMenuAnchor}
+				open={navLiveMenuOpen}
+				onClose={() => handleClose('navLiveMenu')}
+				MenuListProps={{
+					'aria-labelledby': 'navMenu-live-button'
 				}}
 			>
-				<Paper sx={{ p: 2 }}>
-					<Typography>New Notification 1</Typography>
-					<Typography>New Notification 2</Typography>
-					<Typography>New Notification 3</Typography>
-				</Paper>
-			</Popover>
+				<MenuItem onClick={() => navigate('/humidity-live')}>
+					<span style={{ fontWeight: 500, fontSize: 18 }}>
+						Humidity Live Graph
+					</span>
+				</MenuItem>
+				<MenuItem onClick={() => navigate('/soil-moisture-live')}>
+					<span style={{ fontWeight: 500, fontSize: 18 }}>
+						Soil Moisture Live Graph
+					</span>
+				</MenuItem>
+				<MenuItem onClick={() => navigate('/temperature-live')}>
+					<span style={{ fontWeight: 500, fontSize: 18 }}>
+						Temperature Live Graph
+					</span>
+				</MenuItem>
+				<MenuItem onClick={() => navigate('/light-intensity-live')}>
+					<span style={{ fontWeight: 500, fontSize: 18 }}>
+						Light Intensity Live Graph
+					</span>
+				</MenuItem>
+			</Menu>
 		</>
 	);
 };

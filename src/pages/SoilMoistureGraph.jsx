@@ -202,7 +202,7 @@ const SoilMoistureGraph = () => {
 					labels: labels,
 					datasets: [
 						{
-							label: 'SoilMoisture Levels (%)',
+							label: 'Soil Moisture Levels (%)',
 							data: data,
 							backgroundColor: 'rgba(255,87,51,0.4)',
 							borderColor: 'rgba(255,87,51,0.9)',
