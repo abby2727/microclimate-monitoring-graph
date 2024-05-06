@@ -207,7 +207,8 @@ const SoilMoistureGraph = () => {
 							backgroundColor: 'rgba(255,87,51,0.4)',
 							borderColor: 'rgba(255,87,51,0.9)',
 							borderWidth: 1,
-							fill: true
+							fill: true,
+							tension: 0.4
 						}
 					]
 				},
@@ -265,7 +266,7 @@ const SoilMoistureGraph = () => {
 			}
 
 			const myChart2 = new Chart(ctx2, {
-				type: 'bar',
+				type: 'line',
 				data: {
 					labels: [],
 					datasets: [

@@ -206,6 +206,7 @@ const LightIntensityGraph = () => {
 							backgroundColor: 'rgba(50,205,50,0.4)',
 							borderColor: 'rgba(50,205,50,0.9)',
 							borderWidth: 1,
+							tension: 0.4,
 							fill: true
 						}
 					]
@@ -264,7 +265,7 @@ const LightIntensityGraph = () => {
 			}
 
 			const myChart2 = new Chart(ctx2, {
-				type: 'bar',
+				type: 'line',
 				data: {
 					labels: [],
 					datasets: [

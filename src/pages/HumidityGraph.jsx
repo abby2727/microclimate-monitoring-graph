@@ -204,7 +204,8 @@ const HumidityGraph = () => {
 							backgroundColor: 'rgba(74,144,226,0.4)',
 							borderColor: 'rgba(74,144,226,0.9)',
 							borderWidth: 1,
-							fill: true
+							fill: true,
+							tension: 0.4
 						}
 					]
 				},
@@ -262,7 +263,7 @@ const HumidityGraph = () => {
 			}
 
 			const myChart2 = new Chart(ctx2, {
-				type: 'bar',
+				type: 'line',
 				data: {
 					labels: [],
 					datasets: [
