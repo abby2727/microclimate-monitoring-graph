@@ -53,7 +53,7 @@ const TemperatureLiveGraph = () => {
 					}))
 				};
 			});
-		}, 60000);
+		}, 55000);
 
 		return () => clearInterval(interval);
 	}, []);
