@@ -53,7 +53,7 @@ const SoilMoistureLiveGraph = () => {
 					}))
 				};
 			});
-		}, 55000);
+		}, 3000);
 
 		return () => clearInterval(interval);
 	}, []);

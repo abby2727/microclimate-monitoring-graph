@@ -66,7 +66,7 @@ const LightIntensityLiveGraph = () => {
 			});
 
 			setUpdateCount((prevCount) => (prevCount + 1) % 10);
-		}, 55000);
+		}, 3000);
 
 		return () => clearInterval(interval);
 	}, [updateCount]);
